@@ -1,8 +1,9 @@
 import React from 'react'
+import ExpenseItem from './Components/ExpenseItem'
 function App() {
   return (
     <div className='container'>
-      <h2>Advanced Tutorial</h2>
+      <ExpenseItem Date="30-04-21" />
     </div>
   )
 }
