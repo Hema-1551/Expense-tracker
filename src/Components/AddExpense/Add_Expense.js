@@ -5,23 +5,23 @@ const Add_Expense = () => {
     return (
         <div>
             <form>
-                <div className="container"> {/* overalll */}
-                    <div className="element">
-                        <label className="label-ele">Enter Title</label>
-                        <input className="input-ele" type="text" />
+                <div className="new-expense__controls"> {/* overalll */}
+                    <div  className="new-expense__control">
+                        <label>Enter Title</label>
+                        <input  type="text" />
                     </div>
-                    <div className="element">
-                        <label className="label-ele"> Enter Amount</label>
-                        <input className="input-ele" type="number" min="0.1" step="0.1" />
+                    <div className="new-expense__control">
+                        <label > Enter Amount</label>
+                        <input  type="number" min="0.1" step="0.1" />
                     </div>
-                    <div>
-                        <label className="label-ele">Select Date</label>
-                        <input className="input-ele" type="date" />
+                    <div  className="new-expense__control">
+                        <label >Select Date</label>
+                        <input  type="date" />
                     </div>
                     
                 </div>
-                <div>
-                    <button >Add Expense</button>
+                <div className="new-expense__actions">
+                    <button type="submit">Add Expense</button>
                 </div>
             </form>
         </div>
