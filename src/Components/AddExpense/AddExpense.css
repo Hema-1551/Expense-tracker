@@ -1,0 +1,44 @@
+/* #325288
+   #f4eee8 light pink
+   #f5cebe pink
+   #114E60 blue
+
+   fffbdf
+   #334443
+   #34656D
+   #334443
+ */
+
+.container{
+    background-color:#34656D;
+    border-radius: 12px;
+    color:#fffbdf;
+    box-shadow: 3px 4px 8px rgba(0, 0, 0, 0.25);
+    padding:1rem;
+    margin:auto;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    width: 50rem;
+    max-width: 95%;
+    text-align: left;
+}
+.element{
+    display: flex;
+    flex-direction: column;
+    margin:1rem 0.5rem;
+    width: 20rem;
+    max-width: 95%;
+}
+.label-ele{
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin:0rem 0.5rem;
+}
+.input-ele{
+    border-radius: 7px;
+    padding: 0.5rem 1.5rem;
+    margin:1rem 0.5rem;
+    vertical-align: baseline;
+    flex:50%;
+}
