@@ -5,7 +5,7 @@ function App() {
   const expenses = [
     {
       id: "e1",
-      title: "Toilet Paper",
+      title: "Tissue Paper",
       amount: 94.12,
       date: new Date(2020, 7, 14),
     },
@@ -16,16 +16,20 @@ function App() {
       amount: 294.67,
       date: new Date(2021, 2, 28),
     },
-    {
-      id: "e4",
-      title: "New Desk (Wooden)",
-      amount: 450,
-      date: new Date(2021, 5, 12),
-    },
+    
   ];
+  const getExpenseHandler =(Addedexpense)=>{
+    const expense={
+      ...Addedexpense
+    }
+    expenses.push(expense)
+    console.log(expenses)
+  }
+  console.log("outside function \n",expenses)
+   
   return (
     <div>
-      <ExpenseForm/>
+      <ExpenseForm getExpense ={getExpenseHandler}/>
       <Expenses expenses={expenses}/>
     </div>
   );

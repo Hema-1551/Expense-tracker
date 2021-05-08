@@ -1,10 +1,20 @@
 import React from 'react'
-import Add_Expense from "./Add_Expense";
+import AddExpense from "./AddExpense";
 import './AddExpense.css';
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
+    const submitDataChildToParent = (enteredExpenses)=>{
+       // console.log(enteredExpenses)
+        const expense={
+            ...enteredExpenses,
+        id:Math.random()
+        }
+        props.getExpense(expense)
+    //console.log(expense);
+
+    }
     return (
         <div className="new-expense">
-            <Add_Expense/>
+            <AddExpense onSubmitData={submitDataChildToParent}/>
         </div>
     )
 }
