@@ -9,31 +9,28 @@ const Expenses = (props) => {
     console.log(selectedYear)
     setYear(selectedYear)
   }
+  let year;
   return (
     <div>
-
       <Card className="expenses">
         <ExpenseFilter selected={filterdYear} onChageFilterYear={yearHandler} />
-        {props.expenses.map((expense) => (
+     
+        {
+        
+        props.expenses.filter(expense => year == filterdYear
+          ),
+        props.expenses.map((expense) => (
+           year = expense.date.toLocaleString("en-us", { year: "numeric" }),
+
+  
           <ExpenseItem
             key={expense.id}
             title={expense.title}
             date={expense.date}
             amount={expense.amount}
           />
-        ))}
-        {/*  
-        <ExpenseItem
-          title={props.expenses[2].title}
-          date={props.expenses[2].date}
-          amount={props.expenses[2].amount}
-        />
-        <ExpenseItem
-          title={props.expenses[3].title}
-          date={props.expenses[3].date}
-          amount={props.expenses[3].amount}
-        />
-        */}
+        ))
+        }
       </Card>
     </div>
   )
