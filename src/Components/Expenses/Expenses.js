@@ -13,13 +13,16 @@ const Expenses = (props) => {
   const filterdItems = props.expenses.filter(expense => {
     return expense.date.toLocaleString("en-us", { year: "numeric" }) === filterdYear
   })
+
+  
   return (
     <div>
       <Card className="expenses">
         <ExpenseFilter selected={filterdYear} onChageFilterYear={yearHandler} />
 
         {
-          filterdItems.length === 0 ? <p>No Expenses Avilable</p> : filterdItems.map((expense) => (
+          filterdItems.length === 0 && <p>No Expenses Avilable</p> ,
+           filterdItems.map((expense) => (
             year = expense.date.toLocaleString("en-us", { year: "numeric" }),
             <ExpenseItem
               key={expense.id}
