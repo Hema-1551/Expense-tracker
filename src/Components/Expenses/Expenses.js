@@ -1,10 +1,10 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import ExpenseItem from "./ExpenseItem";
 import '../Expenses/Expenses.css'
 import Card from "../UI/Card";
 import ExpenseFilter from "../ExpenseFilter/ExpenseFilter";
 const Expenses = (props) => {
-  const [filterdYear,setYear] = useState('2022');
+  const [filterdYear, setYear] = useState('2022');
   const yearHandler = (selectedYear) => {
     console.log(selectedYear)
     setYear(selectedYear)
@@ -12,26 +12,10 @@ const Expenses = (props) => {
   return (
     <div>
 
-      {/* const Users = () => {
-  const data = [
-    { id: 1, name: "John Doe" },
-    { id: 2, name: "Victor Wayne" },
-    { id: 3, name: "Jane Doe" },
-  ];
-
-  return (
-    <div className="users">
-      {data.map((user) => (
-        <div className="user">{user}</div>
-      ))}
-    </div>
-  );
-}; */}
-
       <Card className="expenses">
         <ExpenseFilter selected={filterdYear} onChageFilterYear={yearHandler} />
-        {props.expenses.map((expense) =>(
-            <ExpenseItem
+        {props.expenses.map((expense) => (
+          <ExpenseItem
             key={expense.id}
             title={expense.title}
             date={expense.date}
