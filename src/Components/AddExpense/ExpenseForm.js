@@ -12,8 +12,12 @@ const ExpenseForm = (props) => {
     //console.log(expense);
 
     }
+    const openForm = ()=>{
+        
+    }
     return (
         <div className="new-expense">
+            <button>Add Expense</button>
             <AddExpense onSubmitData={submitDataChildToParent}/>
         </div>
     )

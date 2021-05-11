@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from "../UI/Card";
 import './ExpensesFilter.css';
-import VerticalProgress from "./VerticalProgress";
+
 
 const ExpensesFilter = (props) => {
     const selectHandler = (event)=>{
@@ -18,7 +18,6 @@ const ExpensesFilter = (props) => {
                     <option value='2019'>2019</option>
                 </select>
                 <div>
-                    <VerticalProgress />
                 </div>
             </div>
         </Card>
