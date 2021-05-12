@@ -1,4 +1,4 @@
-import React from 'react'
+import React ,{useState}from 'react'
 import AddExpense from "./AddExpense";
 import './AddExpense.css';
 const ExpenseForm = (props) => {
@@ -12,13 +12,19 @@ const ExpenseForm = (props) => {
     //console.log(expense);
 
     }
-    const openForm = ()=>{
-        
+    const [openForm, setOpenForm] = useState(0);
+    const openFormHandler = ()=>{
+        setOpenForm(1)
     }
+    if(openForm===1)
+       return <div className="new-expense">
+      
+       <AddExpense onSubmitData={submitDataChildToParent}/>
+   </div> 
+
     return (
         <div className="new-expense">
-            <button>Add Expense</button>
-            <AddExpense onSubmitData={submitDataChildToParent}/>
+        <button onClick={openFormHandler}>Add Expense</button>
         </div>
     )
 }

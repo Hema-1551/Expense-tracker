@@ -36,6 +36,7 @@ const submitHandler=(event)=>{
     setDate('')
    // title_id.value=""
 }
+
     return (
         <div>
             <form onSubmit={submitHandler}>
@@ -44,20 +45,26 @@ const submitHandler=(event)=>{
                
                     <div  className="new-expense__control">
                         <label>Enter Title</label>
-                        <input id="title_id" value={title}type="text" onChange={titleChangeHandler} />
+                        <input id="title_id" value={title}type="text" onChange={titleChangeHandler} required />
                     </div>
                     <div className="new-expense__control">
                         <label > Enter Amount</label>
-                        <input value={amount} type="number" min="0.1" step="0.1" onChange={amountChangeHandler} />
+                        <input value={amount} type="number" min="0.1" step="0.1" onChange={amountChangeHandler} required />
                     </div>
                     <div  className="new-expense__control">
                         <label >Select Date</label>
-                        <input value={date} type="date" onChange={dateChangehandler} />
+                        <input value={date} type="date" onChange={dateChangehandler} required/>
                     </div>
                     
                 </div>
+                <div>
+                
+                   
+               
                 <div className="new-expense__actions">
+                    {/* <button onClick={closeFormHandler} closeForm ={closeFormHandler}>Cancel</button> */}
                     <button type="submit">Add Expense</button>
+                </div>
                 </div>
             </form>
         </div>
