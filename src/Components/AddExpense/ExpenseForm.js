@@ -1,31 +1,39 @@
-import React ,{useState}from 'react'
+import React, { useState } from 'react'
 import AddExpense from "./AddExpense";
 import './AddExpense.css';
 const ExpenseForm = (props) => {
-    const submitDataChildToParent = (enteredExpenses)=>{
-       // console.log(enteredExpenses)
-        const expense={
+    const submitDataChildToParent = (enteredExpenses) => {
+        // console.log(enteredExpenses)
+        const expense = {
             ...enteredExpenses,
-        id:Math.random()
+            id: Math.random()
         }
         props.getExpense(expense)
-    //console.log(expense);
+        //console.log(expense);
 
     }
     const [openForm, setOpenForm] = useState(0);
-    const openFormHandler = ()=>{
+    const [closeForm, setcloseForm] = useState(1);
+    const openFormHandler = () => {
+        setcloseForm(0)
         setOpenForm(1)
     }
-    if(openForm===1)
-       return <div className="new-expense">
-      
-       <AddExpense onSubmitData={submitDataChildToParent}/>
-   </div> 
-
-    return (
-        <div className="new-expense">
-        <button onClick={openFormHandler}>Add Expense</button>
+    const closeFormHandler = (closeForm) => {
+        setOpenForm(0)
+        setcloseForm(1)
+    }
+    if (closeForm) {
+        return <div className="new-expense">
+            <button onClick={openFormHandler}>Add Expense</button>
         </div>
+    }
+    return (
+        <div>
+            {openForm && <div className="new-expense">
+                <AddExpense onSubmitData={submitDataChildToParent} onCloseForm={closeFormHandler} />
+            </div>}
+        </div>
+
     )
 }
 

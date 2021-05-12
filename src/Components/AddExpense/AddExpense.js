@@ -36,7 +36,11 @@ const submitHandler=(event)=>{
     setDate('')
    // title_id.value=""
 }
-
+let closeform=0;
+const closeFormHandler=()=>{
+    closeform=1;
+    props.onCloseForm(closeform);
+}
     return (
         <div>
             <form onSubmit={submitHandler}>
@@ -62,7 +66,7 @@ const submitHandler=(event)=>{
                    
                
                 <div className="new-expense__actions">
-                    {/* <button onClick={closeFormHandler} closeForm ={closeFormHandler}>Cancel</button> */}
+                    <button onClick={closeFormHandler}>Cancel</button>
                     <button type="submit">Add Expense</button>
                 </div>
                 </div>
