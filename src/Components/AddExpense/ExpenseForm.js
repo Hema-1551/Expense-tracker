@@ -9,6 +9,7 @@ const ExpenseForm = (props) => {
             id: Math.random()
         }
         props.getExpense(expense)
+        setcloseForm(1)
         //console.log(expense);
 
     }
