@@ -16,7 +16,7 @@ const Expenses = (props) => {
   const filterdItems = props.expenses.filter(expense => {
     return expense.date.toLocaleString("en-us", { year: "numeric" }) === filterdYear
   })
-
+console.log(filterdItems)
   return (
     <div>
       <Card className="expenses">

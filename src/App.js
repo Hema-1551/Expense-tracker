@@ -26,7 +26,7 @@ function App() {
       return [...prevExpenses,Addedexpense]
     })
   }
-  console.log("outside function \n",expenses)
+  
    
   return (
     <div>

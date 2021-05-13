@@ -11,7 +11,7 @@ const FilteredItem = (props) => {
     return (
         <div>
             <Card >
-                {props.expenses.map(expense => (
+                {props.filterdItems.map(expense => (
                     <ExpenseItem
                         key={expense.id}
                         title={expense.title}
